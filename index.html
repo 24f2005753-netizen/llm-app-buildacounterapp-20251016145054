@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Counter App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+
+        main {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 5px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        #counter {
+            font-size: 2em;
+            text-align: center;
+            margin: 20px 0;
+            color: #555;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 30px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 1em;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        @media (max-width: 600px) {
+            main {
+                padding: 15px;
+            }
+
+            h1 {
+                font-size: 1.5em;
+            }
+
+            #counter {
+                font-size: 1.2em;
+            }
+
+            button {
+                padding: 8px 15px;
+                font-size: 0.9em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>Counter App</h1>
+        <div id='counter'>0</div>
+        <div class='button-container'>
+            <button onclick='increment()'>Increment</button>
+            <button onclick='decrement()'>Decrement</button>
+            <button onclick='reset()'>Reset</button>
+        </div>
+    </main>
+
+    <script>
+        let count = 0;
+
+        function increment() {
+            count++;
+            document.getElementById('counter').innerHTML = count;
+        }
+
+        function decrement() {
+            if (count > 0) {
+                count--;
+                document.getElementById('counter').innerHTML = count;
+            }
+        }
+
+        function reset() {
+            count = 0;
+            document.getElementById('counter').innerHTML = count;
+        }
+    </script>
+</body>
+</html>
